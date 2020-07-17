@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>JavaScript Form Validation using a sample registration form</title>
+<meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+<meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+<link rel='stylesheet' href='enroll-form.css' type='text/css' />
+<script src="my-javascript.js"></script>
+</head>
+<body>
+    <div class="form-container">
+<h1>Enrollment Form</h1>
+<p>To enroll the child, the parent/Guardian must fill in this form on behalf of the child.</p>
+<form id='registration' onSubmit="return formValidation();">
+<ul>
+<li><label for="firstName">First Name:</label></li>
+<li><input type="text" id="firstName" name="firstName" size="50" /></li>
+<li><label for="lastName">Last Name:</label></li>
+<li><input type="text" id="lastName" name="lastName" size="50" /></li>
+<li><label id="gender">Sex:</label></li>
+<li><input type="radio" id="msex" name="msex" value="Male" /><span>Male</span></li>
+<li><input type="radio" id="fsex" name="fsex" value="Female" /><span>Female</span></li>
+<li><label for="grade">Grade:</label></li>
+<li><select id="grade" name="grade">
+<option selected="" value="Default">(Please select a grade)</option>
+<option value="1">Grade 1</option>
+<option value="2">Grade 2</option>
+<option value="3">Grade 3</option>
+<option value="4">Grade 4</option>
+<option value="5">Grade 5</option>
+<option value="6">Grade 6</option>
+<option value="7">Grade 7</option>
+</select></li>
+<li><label for="email">Parent Email:</label></li>
+<li><input type="text" id="email" name="email" size="50" /></li>
+<li><label for="output">Add image:</label></li>
+<li><img id="output"></li>
+<li><input type="file" accept="image/*" onchange="image(event)"></li>
+<li><input type="submit" name="submit" value="Submit"/></li>
+</ul>
+</form>
+</div>
+<script>
+    registration.onsubmit = async (e) => {
+    e.preventDefault();
+    
+    let formData = new FormData();
+    let response = await fetch('https://serverURL', {
+        method: 'POST',
+        body: formData
+    });
+    
+    let result = await response.json();
+    alert(result.message);
+}
+</script>
+</body>
+</html>

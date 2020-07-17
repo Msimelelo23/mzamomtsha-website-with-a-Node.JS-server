@@ -1,0 +1,53 @@
+h1 {
+margin-left: 210px;
+}
+form li {
+list-style: none;
+margin-bottom: 5px;
+}
+
+.form-container {
+    width: 650px;
+    height: 600px;
+    background-color: skyblue;
+    border-radius: 7px;
+    margin-left: 350px;
+}
+
+form ul li label{
+float: left;
+clear: left;
+width: 110px;
+text-align: right;
+margin-right: 5px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:14px;
+}
+
+form ul li input, select, span {
+float: left;
+margin-bottom: 10px;
+}
+
+form img {
+float: left;
+background-color: lightgray;
+width: 350px;
+height: 250px;
+}
+[type="file"] {
+    clear: left;
+    margin: 6px 0 0 115px;
+    font-size:12px
+    }
+
+[type="submit"] {
+clear: left;
+margin: 20px 0 0 240px;
+font-size:25px
+}
+
+p {
+margin-left: 50px;
+font-weight: bold;
+}
